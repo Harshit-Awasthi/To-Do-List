@@ -90,4 +90,23 @@ router.put("/updateTask/:id",async (req, res) => {
         
         });
 
+
+        // get task
+
+        router.get("/getTasks/:id", async(req, res) =>{
+
+            const list= await List.find({user: req.params.id});
+            if(list.length !== 0){
+
+                res.status(200).json({list: list});
+
+            }
+
+            else{
+
+                res.status(200).json({"message":"No task" });
+            }
+
+        });
+
 module.exports = router;
