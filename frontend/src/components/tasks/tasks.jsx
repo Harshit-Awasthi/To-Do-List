@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './tasks.css'
 import TasksCards from './tasksCards';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Update from './update';
 
 
 const Tasks = () => {
@@ -26,14 +29,47 @@ const change = (e)=>{
 
 const submit = ()=>{
 
-    setArray([...Array,Inputs]);
-    setInputs({title: "", body: ""});
+    if (Inputs.title === "" || Inputs.body === "") {
+        toast.error("Title and Body should not be empty");
+    } 
+
+        else{
+
+            setArray([...Array,Inputs]);
+            setInputs({title: "", body: ""});
+            toast.success("Task has been added");
+            toast.error("SignUp to save your task!");
+
+
+        }
+
 
 };
 
+const del=(id) => {
+
+    Array.splice(id,"1");
+    setArray([...Array]);
+
+}
+
+const dis =(value) => {
+
+    console.log(value);
+    document.getElementById("tasks-update").style.display = "block";
+
+};
+
+const setDisplay = (value) => {
+    document.getElementById("tasks-update").style.display = value;
+};
+
+
   return (
-  
+  <>
   <div className='tasks'>
+
+    <ToastContainer/>
 
     <div className="tasks-main container d-flex justify-content-center align-items-center my-4 flex-column">
 
@@ -75,9 +111,10 @@ const submit = ()=>{
     {Array && Array.map((item,index)=>
     (
     
-    <div className='col-lg-3 col-10 mx-5 my-2'>
+    <div className='col-lg-3 col-10 mx-5 my-2' key={index}>
 
-    <TasksCards title={item.title} body={item.body} />
+<TasksCards title={item.title} body={item.body} id={index} delid={del} setDisplay={setDisplay}/>
+
     
     </div>
     
@@ -91,6 +128,17 @@ const submit = ()=>{
 
   </div>
   
+  <div className="tasks-update" id="tasks-update">
+
+    <div className="container update">
+
+    <Update setDisplay={setDisplay}/>
+
+    </div>
+
+  </div>
+  
+  </>
 );
 
 };
