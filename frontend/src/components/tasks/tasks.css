@@ -28,3 +28,44 @@ outline: none;
 display: none;
 
 }
+
+.tasks-card
+{
+
+border: 1px solid black;
+
+}
+
+
+.tasks-card-p
+{
+
+    text-align:justify;
+    text-justify: inter-word;
+
+}
+
+.card-icons{
+
+font-size:18px;
+
+}
+
+.del{
+
+    color: red;    
+}
+
+.card-icon-head
+{
+
+    cursor: pointer;
+    transition: all 0.3s;
+
+}
+
+.card-icon-head:hover{
+
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+
+}
