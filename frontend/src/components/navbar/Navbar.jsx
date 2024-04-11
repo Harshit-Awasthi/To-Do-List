@@ -22,7 +22,7 @@ const Navbar = () => {
         </li>
 
         <li className="nav-item mx-2">
-          <Link className="nav-link active" aria-current="page" to="/todo">Tasks</Link>
+          <Link className="nav-link active" aria-current="page" to="/tasks">Tasks</Link>
         </li>
 
         <li className="nav-item mx-2">

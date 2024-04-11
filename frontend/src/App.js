@@ -6,6 +6,7 @@ import About from "./components/about/about";
 import SignUp from './components/signup/signup';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import SignIn from './components/signup/signin';
+import Tasks from './components/tasks/tasks';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
 
       <Route exact path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
+      <Route path="/tasks" element={<Tasks/>}/>
       <Route path="/signup" element={<SignUp/>}/>
       <Route path="/signin" element={<SignIn/>}/>
     </Routes>
