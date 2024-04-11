@@ -8,7 +8,7 @@ const Footer = () => {
     
   
     <h4>
-    ToDo List
+    Task Whiz
     </h4>
 
     &nbsp;
