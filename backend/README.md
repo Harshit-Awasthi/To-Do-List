@@ -14,7 +14,7 @@
 - **📱 Clean and responsive design**: Ensures smooth user experience on various devices.
 - **🌐 User Authentication**: Adapts to your language, timezone, and date preferences using the native `Intl` API
 - **🗂️ Add Tasks**: Users can create and personalize task categories to suit their preferences.
-- **📴 Delete/Update Tasks**: Users can choose several app color themes. <br/> <img src="screenshots/ColorThemes.png" width="200px" />
+- **📴 Delete/Update Tasks**: Users can choose several app color themes.
 - **🔎 View Tasks**: Option to select multiple tasks and perform actions on all of them at once.
 
 
