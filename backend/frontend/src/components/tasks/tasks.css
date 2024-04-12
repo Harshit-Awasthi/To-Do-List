@@ -1,0 +1,94 @@
+.tasks{
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: auto;
+    position:relative;
+
+}
+
+
+.tasks-inputs {
+
+border: none;
+outline: none;
+
+}
+
+
+.tasks-inputs-div{
+
+
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+
+}
+
+#textarea{
+
+display: none;
+
+}
+
+.tasks-card
+{
+
+border: 1px solid black;
+
+}
+
+
+.tasks-card-p
+{
+
+    text-align:justify;
+    text-justify: inter-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.card-icons{
+
+font-size:18px;
+
+}
+
+.del{
+
+    color: red;    
+}
+
+.card-icon-head
+{
+
+    cursor: pointer;
+    transition: all 0.3s;
+
+}
+
+.card-icon-head:hover{
+
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+
+}
+
+.tasks-update{
+
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    position: fixed;
+    top:80px;
+    left:0px;
+    background-color: rgb(17, 153, 202);
+    display: none;
+
+}
+
+.update{
+
+    height:100%;
+
+}
