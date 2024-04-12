@@ -12,13 +12,13 @@ router.post("/register", async (req, res) => {
 
         const existingUser = await User.findOne({ email }); // Check if user already exists
         if (existingUser) {
-            return res.status(400).json({ message: "User already exists" });
+            return res.status(200).json({ message: "User already exists" });
         }
 
         const user = new User({ email, username, password: hashpassword });
 
         await user.save();
-        res.status(200).json({ user });
+        res.status(200).json({ message:"Sign Up Successfull" });
     } catch (error) {
         res.status(500).json({ message: "Internal Server Error" }); // Generic error response
     }
@@ -36,7 +36,7 @@ router.post("/signin", async (req, res) => {
       if(!user)
       {
 
-        res.status(400).json({ message: "Please Sign Up First" }); 
+        res.status(200).json({ message: "Please Sign Up First" }); 
 
       }
 
@@ -45,7 +45,7 @@ router.post("/signin", async (req, res) => {
       if(!isPasswordCorrect)
       {
 
-        res.status(400).json({ message: "Password is not correct" }); 
+        res.status(200).json({ message: "Password is not correct" }); 
 
       }
 

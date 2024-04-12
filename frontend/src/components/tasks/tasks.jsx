@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import './tasks.css'
 import TasksCards from './tasksCards';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Update from './update';
-
+import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {authActions} from "../../store";
+import axios from "axios";
+let id= sessionStorage.getItem("id");
 
 const Tasks = () => {
 
     const [Inputs, setInputs]= useState({title:"", body:""});
     const [Array, setArray]= useState([]);
+
+
 
 
 
@@ -27,7 +33,7 @@ const change = (e)=>{
 
 }
 
-const submit = ()=>{
+const submit = async()=>{
 
     if (Inputs.title === "" || Inputs.body === "") {
         toast.error("Title and Body should not be empty");
@@ -35,11 +41,23 @@ const submit = ()=>{
 
         else{
 
-            setArray([...Array,Inputs]);
-            setInputs({title: "", body: ""});
-            toast.success("Task has been added");
-            toast.error("SignUp to save your task!");
+            if(id)
+            {
 
+                await axios.post("http://localhost:1000/api/v2/addTask",{title:Inputs.title, body:Inputs.body,id:id}).then((response) => {console.log("response");});
+
+                setInputs({title: "", body: ""});
+                toast.success("Task has been added");
+            }
+
+            else{
+
+                setArray([...Array,Inputs]);
+                setInputs({title: "", body: ""});
+                toast.success("Task has been added");
+                toast.error("SignUp to save your task!");
+
+            }
 
         }
 
@@ -64,6 +82,16 @@ const setDisplay = (value) => {
     document.getElementById("tasks-update").style.display = value;
 };
 
+useEffect(() => {    
+        
+    const fetch =async() => {
+
+      await axios.get(`http://localhost:1000/api/v2/getTasks/${id}`).then((response)=>{setArray(response.data.list)});
+
+    };
+    fetch();
+
+    },[submit]);
 
   return (
   <>

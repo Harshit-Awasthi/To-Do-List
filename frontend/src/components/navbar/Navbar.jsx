@@ -2,8 +2,22 @@ import React from 'react';
 import './Navbar.css';
 import { FaTasks } from "react-icons/fa";
 import {Link} from "react-router-dom"; 
-
+import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {authActions} from "../../store";
 const Navbar = () => {
+
+    const isLoggedIn = useSelector((state)=> state.isLoggedIn);
+    
+    const dispatch = useDispatch();
+
+    const logout = () =>
+    {
+      sessionStorage.clear("id");
+      dispatch(authActions.logout());
+
+    }
+
   return (
   <div><nav className="navbar navbar-expand-lg">
   <div className="container">
@@ -25,6 +39,7 @@ const Navbar = () => {
           <Link className="nav-link active" aria-current="page" to="/tasks">Tasks</Link>
         </li>
 
+        {!isLoggedIn && <> 
         <li className="nav-item mx-2">
           <Link className="nav-link active btn-nav" aria-current="page" to="/signup">Sign Up</Link>
         </li>
@@ -32,10 +47,18 @@ const Navbar = () => {
         <li className="nav-item mx-2">
           <Link className="nav-link active btn-nav" aria-current="page" to="/signin">Sign In</Link>
         </li>
+        </>}
 
-        <li className="nav-item mx-2">
+        {isLoggedIn && <>
+        
+          <li className="nav-item mx-2"  onClick={logout}>
           <Link className="nav-link active btn-nav" aria-current="page" to="#">Log Out</Link>
+
+         
+
         </li>
+        
+        </>}
 
         
       </ul>
