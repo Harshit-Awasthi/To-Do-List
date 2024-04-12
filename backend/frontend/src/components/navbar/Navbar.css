@@ -1,0 +1,22 @@
+.user-png{
+
+width:30px;
+height: 30px;
+
+}
+
+.navbar-brand{
+
+    color: rgba(69, 94, 175,0.87);
+
+}
+
+.btn-nav
+{
+
+background-color:  rgba(69, 94, 175,0.87);
+border-radius: 5px;
+color: white !important;
+font-weight: bold;
+
+}
