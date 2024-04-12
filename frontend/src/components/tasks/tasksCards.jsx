@@ -2,7 +2,7 @@ import React from 'react';
 import { FaDeleteLeft } from "react-icons/fa6";
 import { MdOutlineUpdate } from "react-icons/md";
 
-const TasksCards = ({ title, body, id, delid, setDisplay }) => {
+const TasksCards = ({ title, body, id, delid, setDisplay,updateId,toBeUpdate }) => {
   return (
     <div className='p-3 tasks-card'>
       <div>
@@ -16,6 +16,7 @@ const TasksCards = ({ title, body, id, delid, setDisplay }) => {
           className='d-flex justify-content-center align-items-center card-icon-head px-2 py-1'
           onClick={() => {
             setDisplay("block");
+            toBeUpdate(updateId);
           }}
         >
           <MdOutlineUpdate className='card-icons' /> Update
