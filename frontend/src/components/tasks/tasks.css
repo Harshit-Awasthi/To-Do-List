@@ -43,6 +43,9 @@ border: 1px solid black;
 
     text-align:justify;
     text-justify: inter-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 }
 
