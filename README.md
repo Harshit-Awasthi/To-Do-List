@@ -3,10 +3,14 @@
 
 
 <h1>📝Task Whiz: Todo List App</h1>
+
+![image](https://github.com/Harshit-Awasthi/To-Do-List/assets/74407688/d4912d6f-c0ae-41d7-8945-06f39061adc7)
+
+
 </p>
 
 
-
+https://task-whiz.vercel.app/
 
 
 ## ⚡ Features
@@ -41,4 +45,4 @@ To install and run the project locally, follow these steps:
 - Navigate to the project directory: `cd backend`.
 - Start the development server: `nodemon app.js  `
 
-The app will now be running at [http://localhost:1000/](http://localhost:1000/).
+The app will now be running at (https://task-whiz.vercel.app/).
