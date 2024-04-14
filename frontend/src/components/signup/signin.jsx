@@ -29,7 +29,7 @@ const SignIn = () => {
       if (response.data) {
         sessionStorage.setItem('id', response.data.user._id);
         dispatch(authActions.login());
-        history('/todo');
+        history('/tasks');
       } else {
         // Handle the case where the response does not contain the expected data
         console.error('Response data or _id not found in the response.');
