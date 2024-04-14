@@ -45,6 +45,7 @@ To install and run the project locally, follow these steps:
 - Install the dependencies: `npm install`
 - Start the development server: `nodemon app.js  `
 
-The app will now be running at (https://task-whiz.vercel.app/).
+Frontend deployed at (https://task-whiz.vercel.app/).
+Backend needs to be run in the local system.
 
-YouTube link of the working project: https://www.youtube.com/watch?v=WCMc9a2j9u8
+YouTube link of the working project: https://youtu.be/rM47W1LgLUI
