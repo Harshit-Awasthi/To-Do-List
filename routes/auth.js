@@ -36,7 +36,7 @@ router.post("/signin", async (req, res) => {
       if(!user)
       {
 
-        res.status(200).json({ message: "Please Sign Up First" }); 
+       return res.status(200).json({ message: "Please Sign Up First" }); 
 
       }
 
@@ -45,7 +45,7 @@ router.post("/signin", async (req, res) => {
       if(!isPasswordCorrect)
       {
 
-        res.status(200).json({ message: "Password is not correct" }); 
+        return res.status(200).json({ message: "Password is not correct" }); 
 
       }
 
