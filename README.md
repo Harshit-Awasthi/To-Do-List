@@ -48,4 +48,4 @@ To install and run the project locally, follow these steps:
 Frontend deployed at (https://task-whiz.vercel.app/).
 Backend needs to be run in the local system.
 
-YouTube link of the working project: https://youtu.be/rM47W1LgLUI
+
